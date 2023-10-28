@@ -3,6 +3,7 @@ import './App.css';
 import { WelcomeNote } from './components/welcomeNote';
 import {Users} from './components/users'
 import {UsersForm} from './components/usersForm'
+import {MemoizedTest} from './components/test'
 import {useSelector,useDispatch} from 'react-redux'
 
 import {setName} from './store/welcomeSlice';
@@ -10,7 +11,7 @@ import {setUsersList, activeUsersDetailsLoading, InactiveUsersDetailsLoading} fr
 function App() {
   const dispatch = useDispatch();
   const {name} = useSelector((state)=>(state.welcome));
-  const {usersDetails} = useSelector((state)=>(state.users))
+  const {usersDetails} = useSelector((state)=>(state.avinash))
 
   const handleUserForm = (data) => {
     dispatch(activeUsersDetailsLoading());
@@ -30,6 +31,7 @@ function App() {
       <WelcomeNote welcomeText={name} updateUsername={updateUsername} />
       { usersDetails.loading ? <p style={{textAlign:"center"}}>Loading...</p> : <Users users={usersDetails.data} />}
       <UsersForm onSubmit={handleUserForm} />
+      <MemoizedTest />
     </div>
   );
 }

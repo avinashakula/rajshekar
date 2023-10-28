@@ -4,6 +4,6 @@ import welcomeReducer from "./welcomeSlice";
 export const store = configureStore({
     reducer:{
         welcome:welcomeReducer,
-        users:userReducer
+        avinash:userReducer
     }
 })

@@ -1,14 +1,12 @@
 import React from 'react'
 
-export const WelcomeNote = (props) => {
+export const WelcomeNote = React.memo((props) => {
+    console.log("Welcome Note Component Rendered");
     const {updateUsername, welcomeText} = props;
     const [user, setUser] = React.useState("");
     const onChangeHandler = (e) => {
         setUser(e.target.value);
-    }
-    // const onUpdate = () => {
-    //     updateUsername(user);
-    // }
+    }   
     return (
         <div style={{textAlign:'center'}}>
             <h2>Welcome {welcomeText}</h2>
@@ -16,4 +14,4 @@ export const WelcomeNote = (props) => {
             <button onClick={()=>{updateUsername(user)}}>Update</button>
         </div>
     )
-}
+})

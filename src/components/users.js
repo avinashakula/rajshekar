@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Users = (props) => {
+    // console.log("Users Component Rendered");
     const {users} = props;
     return (
         <div style={{textAlign:'center'}}>
